@@ -1,23 +1,30 @@
 #include "monty.h"
 /**
-* execute - responsible for executing the opcode.
-* @stack: the head linked list in subject.
-* @counter: responsible for counting a line in subject.
-* @file: a monty file pointer.
-* @content: the content of a line in subject.
-* Return: NULL.
+* execute - it executes the opcode
+* @stack: head linked list - stack
+* @counter: line_counter
+* @file: poiner to monty file
+* @content: line content
+* Return: no return
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", fpush},
-			        {"pall", fpall}, 
-				{"pint", fpint},
-				{"pop", fpop},
-				{"swap", fswap},
-				{"add", fadd},
-				{"nop", fnop},
-				{"stack", fstack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
